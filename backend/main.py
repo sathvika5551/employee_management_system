@@ -219,3 +219,27 @@ def delete_employee(employee_id: int):
         conn.close()
 
     return {"message": "Employee deleted successfully"}
+@app.get("/db-test")
+def db_test():
+    try:
+        conn = get_connection()
+        cursor = conn.cursor()
+
+        cursor.execute("SELECT DATABASE()")
+        database = cursor.fetchone()
+
+        cursor.execute("SHOW TABLES")
+        tables = cursor.fetchall()
+
+        cursor.close()
+        conn.close()
+
+        return {
+            "database": database,
+            "tables": tables
+        }
+
+    except Exception as e:
+        return {
+            "error": str(e)
+        }
