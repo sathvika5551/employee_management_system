@@ -7,7 +7,7 @@ from datetime import date
 # CONFIGURATION
 # =========================================================
 
-API = "http://127.0.0.1:8000"
+API = "https://employee-management-system-pnaj.onrender.com"
 
 st.set_page_config(
     page_title="Employee Management System",
