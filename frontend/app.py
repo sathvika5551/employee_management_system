@@ -529,26 +529,11 @@ elif st.session_state.page == "Delete Employee":
 
             with col1:
 
-                st.markdown(
-                    f"""
-                    <div class="employee-card">
+                st.subheader(f"👤 {emp['name']}")
 
-                        <div class="employee-name">
-                            👤 {emp['name']}
-                        </div>
+                st.write(f"📧 **Email:** {emp['email']}")
 
-                        <div class="employee-info">
-                            📧 <b>Email:</b> {emp['email']}
-                        </div>
-
-                        <div class="employee-info">
-                            📞 <b>Phone:</b> {emp['phone']}
-                        </div>
-
-                    </div>
-                    """,
-                    unsafe_allow_html=True
-                )
+                st.write(f"📞 **Phone:** {emp['phone']}")
 
             with col2:
 
